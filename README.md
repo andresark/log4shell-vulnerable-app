@@ -85,3 +85,10 @@ https://www.trendmicro.com/en_us/research/21/l/patch-now-apache-log4j-vulnerabil
 
 [@christophetd](https://twitter.com/christophetd)
 [@rayhan0x01](https://twitter.com/rayhan0x01)
+
+## Support
+This is an Open Source community project. Project contributors may be able to help, depending on their time and availability. Please be specific about what you're trying to do, your system, and steps to reproduce the problem.
+
+For bug reports or feature requests, please open an issue. You are welcome to contribute.
+
+Official support from Trend Micro is not available. Individual contributors may be Trend Micro employees, but are not official support.
