@@ -61,7 +61,7 @@ pwned
 
 ## Protection with Cloud One Application Security
 
-This assumes you have (already integrated the agent to your application.)[https://cloudone.trendmicro.com/docs/application-security/install-agent/]
+This assumes you have (already integrated the agent to your application)[https://cloudone.trendmicro.com/docs/application-security/install-agent/]
 
 1. Log into Trend Micro Cloud One and navigate to Application Security.
 2. Select "Group's Policy" on the left-hand menu and find your application's Group.
